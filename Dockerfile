@@ -4,11 +4,11 @@
 # see README.md for usage details #
 ###################################
 
-LABEL maintainer="emile.caron@uptilab.com"
-
 # Use python base image
 # or install python and pip yourself if your executable requires a different runtime
 FROM python:3.8
+
+LABEL maintainer="emile.caron@uptilab.com"
 
 ######## CLOUD RUNNER SETUP ##############
 # Setup cloud-runner
