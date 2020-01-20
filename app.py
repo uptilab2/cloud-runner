@@ -54,7 +54,7 @@ async def handler(request):
     # File parameters
     temporary_files = []
     for param, file_content in request_data.get('file-params', []):
-        fp = tempfile.NamedTemporaryFile(mode='w + b', buffering=0)
+        fp = tempfile.NamedTemporaryFile(mode='w+b', buffering=0)
         fp.write(file_content.encode())
         temporary_files.append(fp)
         process_command += [param, fp.name]
