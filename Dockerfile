@@ -17,7 +17,7 @@ RUN pip install aiohttp==3.6.2 gunicorn==20.0.4
 ADD ./app.py /runner/app.py
 
 # Define default command. adjust concurrency settings if needed
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --worker-class aiohttp.GunicornWebWorker app:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --worker-class aiohttp.GunicornWebWorker --timeout=830 app:app
 
 # Adjust timeout limit
 ENV PROCESS_MAX_TIMEOUT=60
